@@ -1,0 +1,51 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/background.jpg");
+  /* Укажите путь к вашему изображению */
+  background-size: cover;
+  background-position: center;
+}
+
+.login__card {
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.white-text-field {
+  background-color: transparent;
+}
+
+.white-text-field .MuiOutlinedInput-root fieldset,
+.white-text-field .MuiInputLabel-root,
+.white-text-field .MuiInputBase-input {
+  color: #fff;
+  border-color: #fff;
+}
+
+.white-text-field .MuiOutlinedInput-root {
+  & fieldset {
+    border-color: #fff;
+  }
+  &:hover fieldset {
+    border-color: #fff;
+  }
+  &.Mui-focused fieldset {
+    border-color: #fff;
+  }
+}
+
+.white-text-field .MuiInputLabel-root {
+  &.Mui-focused {
+    color: #fff;
+  }
+}
+

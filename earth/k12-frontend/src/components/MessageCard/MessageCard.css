@@ -1,0 +1,39 @@
+.message-card__wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-card__wrapper.own {
+  justify-content: flex-end;
+}
+
+.message-card {
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  color: #fff;
+}
+
+.avatar {
+  background-color: #bdbdbd;
+  margin-right: 16px;
+}
+
+.message-card__header {
+  padding: 16px;
+}
+
+.message-card__header__text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+}
+
+.message-card__content {
+  padding: 16px;
+}
+
+.message-card__content__text {
+  font-size: 16px;
+  word-wrap: break-word;
+  color: #fff;
+}
