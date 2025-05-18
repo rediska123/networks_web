@@ -51,18 +51,17 @@ const users: Users = {} // Словарь для пользователей
 
 // Функция отправки сообщения на транспортный уровень
 const sendMsgToTransportLevel = async (message: Message): Promise<void> => {
-//   const response = await axios.post(`http://${transportLevelHostname}:${transportLevelPort}/send`, message)
-//   if (response.status !== 200) {
-//     message.error = 'Error from transport level by sending message'
-//     users[message.username].forEach(element => {
-//       if (message.id === element.id) {
-//         element.ws.send(JSON.stringify(message))
-//       }
-//     })
-//   }
-//   console.log('Response from transport level: ', response)
-sendMessageToOtherUsers(message.username, message)
-
+  const response = await axios.post(`http://${transportLevelHostname}:${transportLevelPort}/send`, message)
+  if (response.status !== 200) {
+    message.error = 'Error from transport level by sending message'
+    users[message.username].forEach(element => {
+      if (message.id === element.id) {
+        element.ws.send(JSON.stringify(message))
+      }
+    })
+  }
+  console.log('Response from transport level: ', response)
+//sendMessageToOtherUsers(message.username, message)
 }
 
 // Функция отправки сообщения через вебсокет
