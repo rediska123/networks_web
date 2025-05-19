@@ -41,7 +41,7 @@ export const MessageCard: React.FC<MessageProps> = ({ msg }) => {
             variant="body2"
             className="message-card__content__text"
           >
-            {msg.error ? `Ошибка при отправке: ${msg.error}` : msg.data}
+            {msg.error ? `Ошибка при отправке: ${msg.error}` : msg.message}
           </Typography>
         </CardContent>
       </Card>

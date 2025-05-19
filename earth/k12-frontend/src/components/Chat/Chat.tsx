@@ -31,9 +31,9 @@ export const Chat: React.FC<ChatProps> = ({ messages, ws, messageArray, setMessa
       <div className="chat__body">
         <div className="chat__message-container">
           {messages.length > 0 ? (
-            messages.map((msg: Message) => (
-                <MessageCard msg={msg} />
-            ))
+              messages.map((msg: Message, index) => (
+                  <MessageCard key={index} msg={msg} />
+              ))
           ) : (
             <Typography variant="h6" align="center" color="#fff">
               Здесь будут сообщения

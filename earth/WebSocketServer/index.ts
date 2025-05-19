@@ -6,7 +6,7 @@ import ws, { type WebSocket } from 'ws';
 const port: number = 8005; // порт на котором будет развернут этот (вебсокет) сервер
 const hostname = 'localhost'; // адрес вебсокет сервера
 const transportLevelPort = 8002; // порт сервера транспортного уровня
-const transportLevelHostname = '192.168.12.172'; // адрес сервера транспортного уровня
+const transportLevelHostname = 'localhost'; // адрес сервера транспортного уровня
 
 // Интерфейс для сообщения
 interface Message {

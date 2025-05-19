@@ -39,7 +39,7 @@ export const Login: React.FC<LoginProps> = ({ws, setWs, createWebSocket}) => {
     // устанавливаем webSocket соединение
     setWs(
       createWebSocket(
-        `ws://${hostname}:8001/?username=${encodeURIComponent(userName)}`,
+        `ws://${hostname}:8010/?username=${encodeURIComponent(userName)}`,
       ),
     );
   };

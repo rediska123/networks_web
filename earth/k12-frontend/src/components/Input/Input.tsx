@@ -15,21 +15,20 @@ export const Input: React.FC<InputProps> = ({ ws, setMessageArray }) => {
   // Обработчик изменения состояния инпута
   const handleChangeMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newMsg: Message = {
-      data: event.target.value,
+      message: event.target.value,
       username: login,
-      send_time: String(new Date()),
     };
     setMessage(newMsg);
   };
 
   // Обработчик отправки сообщения
   const handleClickSendMessBtn = () => {
-    if (!message.data || !message.data.trim()) {
+    if (!message.message || !message.message.trim()) {
       console.error("Введите сообщение");
       return;
     }
     if (login && ws) {
-      message.send_time = "2024-02-23T13:45:41Z";
+      message.send_time = new Date().toISOString();
       const msgJSON = JSON.stringify(message);
       ws.send(msgJSON);
       setMessageArray((currentMsgArray: Message[]) => [...currentMsgArray, message]);
@@ -43,7 +42,7 @@ export const Input: React.FC<InputProps> = ({ ws, setMessageArray }) => {
         label="Сообщение"
         variant="outlined"
         placeholder="Введите сообщение"
-        value={message.data}
+        value={message.message}
         onChange={handleChangeMessage}
         fullWidth
         className="white-text-field"
